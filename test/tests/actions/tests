@@ -8,6 +8,7 @@
                   'multiple variables.'
     [without_action]
       type = 'Exodiff'
+      abs_zero = 1e-9
       input = 'EqualValueEmbeddedConstraint.i'
       exodiff = 'EqualValueEmbeddedConstraint_out.e'
       detail = 'without using an action'
@@ -15,6 +16,7 @@
     [with_action]
       prereq = EqualValueEmbeddedConstraintAction/without_action
       type = 'Exodiff'
+      abs_zero = 1e-9
       input = 'EqualValueEmbeddedConstraintAction.i'
       exodiff = 'EqualValueEmbeddedConstraint_out.e'
       detail = 'using the EqualValueEmbeddedConstraint action to '
@@ -24,6 +26,7 @@
     [with_action_multiple_blocks]
       prereq = EqualValueEmbeddedConstraintAction/with_action
       type = 'Exodiff'
+      abs_zero = 1e-9
       input = 'EqualValueEmbeddedConstraintAction.i SplitActionBlocks.i'
       exodiff = 'EqualValueEmbeddedConstraint_out.e'
       detail = 'using multiple instances of the EqualValueEmbeddedConstraint '
